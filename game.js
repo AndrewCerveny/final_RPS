@@ -1,27 +1,27 @@
-var player1 = new Player({name:'user',token:'👨🏽‍💻', wins: 0})
-var player2 = new Player({name:'computer', token: '💻', wins:0})
+var user = new Player({name:'user', token:'👨🏽‍💻', wins:0});
+var computer = new Player({name:'computer', token:'💻',wins:0});
 
 class Game {
-  constructor(user,gameChoice) {
-    this.trackData = user.wins;
-    this.gameSelection = gameChoice;
-  }
-  winConditions(gameChoice) {
-    if(gameChoice === 'classic-board') {
-      'rock' > 'Scissors'
-      'Paper' > 'Rock'
-      'Scissors'> 'Paper'
-    }
+  constructor(competitor,gameChoice) {
 
+    this.gameSelection = gameChoice;
   }
 }
 
 
-winCondition(gameChoice,selectionPlay1,selectionPlay2) {
-if( gameChoice === 'classic-board') {
-  // 🗿 > ✂️
-  //  ✂️ > 📄
-  // 📄 > 🗿
+  // winConditions(gameChoice) {
+  // return (player1.warrior)
+  //
+  //   }
+
+
+
+
+// winCondition(gameChoice,selectionPlay1,selectionPlay2) {
+// if( gameChoice === 'classic-board') {
+//   // 🗿 > ✂️
+//   //  ✂️ > 📄
+//   // 📄 > 🗿
 
 
 

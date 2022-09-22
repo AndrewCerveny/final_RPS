@@ -1,9 +1,9 @@
 class Player {
-  constructor(user) {
-    this.name = user.name;
-    this.token = user.token;
-    this.wins = user.wins;
-    this.warrior = ['Rock','Paper','Scissors']
+  constructor(contender) {
+    this.name = contender.name;
+    this.token = contender.token;
+    this.wins = contender.wins;
+    this.fighters = ['Rock','Paper','Scissors']
     this.myTurn = true;
   }
   takesTurn(){
