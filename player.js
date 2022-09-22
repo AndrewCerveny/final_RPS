@@ -1,37 +1,16 @@
 class Player {
-  constructor(contender) {
-    this.name = contender.name;
-    this.token = contender.emblem;
-    this.wins = contender.wins;
-    this.myClick = true;
-
+  constructor(user) {
+    this.name = user.name;
+    this.token = user.token;
+    this.wins = user.wins;
+    this.warrior = ['Rock','Paper','Scissors']
+    this.myTurn = true;
   }
   takesTurn(){
-    if (!this.myClick) {
-    return this.myClick = true
+    if (!this.myTurn) {
+      return this.myTurn = true
     } else {
-    this.myClick = false
+    this.myTurn = true
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-module.exports = Player;
