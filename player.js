@@ -3,7 +3,8 @@ class Player {
     this.name = contender.name;
     this.token = contender.token;
     this.wins = contender.wins;
-    this.fighters = ['Rock','Paper','Scissors']
+    this.fighters = ['rock','paper','scissors']
+    this.chosenFighter = null; 
     this.myTurn = true;
   }
   takesTurn(){
