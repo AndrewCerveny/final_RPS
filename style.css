@@ -1,3 +1,10 @@
+/* effecting entire document */
+
+*{
+  font-family: fantasy;
+  box-sizing: border-box;
+}
+/* html elements  */
 html {
  height: 100vh;
 }
@@ -5,30 +12,103 @@ html {
 body {
   height: 100%;
 }
-.hidden {
-  display: none;
-}
+
 
 section {
-  border: .5px solid black;
+  border: 1.5px solid white;
 }
 
 main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 3px solid limegreen;
   height: 100%;
+
 }
 
-.left-section-wrapper{
+/* user- scoreboard area */
+.left-section-wrapper {
+  display: flex;
+  flex-direction: column;
   width: 25%;
+  height:60%
+  border: 2px solid red;
+  background-color: #758A89;
+}
+.user-icon {
+  font-size: 70px;
+}
+.user-scoreboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-trackpad {
+  display: flex;
+  flex-direction: column;
+  height; 48%;
+  font-size: 150%
 }
 
-.right-section-wrapper{
-  width: 25%;
-}
-
-.middle-section-wrapper{
+/* Middle-Gameing Area */
+.middle-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   width: 50%;
+  height: 100%;
+  background-color: black;
+  color: white;
+}
+.wrapper-game-title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+
+}
+.page-title {
+  font-size: 153%;
+}
+.page-title-subtitle{
+  font-size: 107%;
+}
+.classic-game-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grabbing;
+}
+.injustice-game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: grabbing;
+}
+
+/* Computer-scoreboard Area */
+.right-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  background-color: #758A89
+}
+.computer-icon {
+  font-size: 70px;
+}
+.computer-trackpad {
+  display: flex;
+  flex-direction: column;
+  height; 48%;
+  font-size: 150%
+}
+.computer-scoreboard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* hidden form area */
+.hidden {
+  display: none;
 }
