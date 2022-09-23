@@ -52,4 +52,4 @@ function computerPlayer(gameArr) {
 
 //  variables
 var classicGame = ['paper','scissors','rock']
-var superGame = ['paper','scissors','rock','villian']
+var superGame = ['paper','scissors','rock','villian','hero']
