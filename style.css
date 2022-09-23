@@ -26,6 +26,7 @@ main {
 
 }
 
+
 /* user- scoreboard area */
 .left-section-wrapper {
   display: flex;
@@ -33,7 +34,7 @@ main {
   width: 25%;
   height:60%
   border: 2px solid red;
-  background-color: #758A89;
+  background-color: #3c6e71;
 }
 .user-icon {
   font-size: 70px;
@@ -57,14 +58,14 @@ main {
   align-content: center;
   width: 50%;
   height: 100%;
-  background-color: black;
-  color: white;
+  background-color: #d9d9d9;
+  color: #353535;
 }
 .wrapper-game-title{
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: #353535;
 
 }
 .page-title {
@@ -79,19 +80,24 @@ main {
   align-items: center;
   cursor: grabbing;
 }
+.classic-game-area:hover {
+  background-color: white;
+}
 .injustice-game-area {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: grabbing;
 }
-
+.injustice-game-area:hover {
+  background-color: #caf0f8;
+}
 /* Computer-scoreboard Area */
 .right-section-wrapper {
   display: flex;
   flex-direction: column;
   width: 25%;
-  background-color: #758A89
+  background-color: #3c6e71
 }
 .computer-icon {
   font-size: 70px;
@@ -109,6 +115,14 @@ main {
 }
 
 /* hidden form area */
+
+.classicF {
+  display:flex;
+  align-items: center;
+}
+
+
+
 .hidden {
   display: none;
 }
