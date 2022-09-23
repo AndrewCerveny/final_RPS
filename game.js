@@ -22,7 +22,7 @@ class Game {
 
 function rulesClassicGame(chosenFighter, computerFighter) {
 
-    if(chosenFighter === 'rock' && computerFighter === 'scissor') {
+    if(chosenFighter === 'rock' && computerFighter === 'scissors') {
     //change innertext
     console.log(`rock beats scissors user wins`)
     user.wins += 1;
@@ -35,7 +35,7 @@ function rulesClassicGame(chosenFighter, computerFighter) {
     console.log(`rock meets rock, no winner`)
     user.wins += 0;
     computer.wins += 0;
-    } else if (chosenFighter === 'paper' && computerFighter === 'scissor') {
+  } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
     //change inner innterText
     console.log(`scissors beats paper user wins computer wins`)
     computer.wins += 1;
@@ -48,26 +48,28 @@ function rulesClassicGame(chosenFighter, computerFighter) {
       console.log(`paper meets paper, no winner`)
     user.wins += 0;
     computer.wins += 0;
-    } else if (chosenFighter === 'scissor' && computerFighter === 'rock') {
+  } else if (chosenFighter === 'scissors' && computerFighter === 'rock') {
     // change innertext
     console.log(`rock beats scissor computer wins`)
 
     computer.wins += 1
-    } else if (chosenFighter === 'scissor' && computerFighter === 'paper') {
+  } else if (chosenFighter === 'scissors' && computerFighter === 'paper') {
     // change innertext
     console.log(`scissors beats paper, user wins`)
     user.wins += 1
-    } else if (chosenFighter === 'scissor' && computerFighter === 'scissor') {
+  } else if (chosenFighter === 'scissors' && computerFighter === 'scissors') {
     // change innterText
     console.log(`scissors meet scissors, there is a draw`)
     user.wins += 0;
     computer.wins += 0;
-    }
+  }else{
+    return `unknown fighter or fighters`
   }
+}
 
 
 function rulesInjusticeGame(chosenFighter, computerFighter) {
-  if(chosenFighter === 'rock' && computerFighter === 'scissor') {
+  if(chosenFighter === 'rock' && computerFighter === 'scissors') {
   //change innertext
   user.wins += 1;
   console.log(`rock beats scissors  user wins`)
@@ -88,7 +90,7 @@ function rulesInjusticeGame(chosenFighter, computerFighter) {
     user.wins += 0;
     computer.wins += 0;
     console.log(`user- rock computer - rock = draw `)
-  } else if (chosenFighter === 'paper' && computerFighter === 'scissor') {
+  } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
     //change inner innterText
     computer.wins += 1;
     console.log(`computer choose  scissor and beat paper`)
@@ -109,28 +111,28 @@ function rulesInjusticeGame(chosenFighter, computerFighter) {
     user.wins += 0;
     computer.wins += 0;
     console.log(`user computer draw paper vs paper`)
-  } else if (chosenFighter === 'scissor' && computerFighter === 'scissor') {
+  } else if (chosenFighter === 'scissors' && computerFighter === 'scissors') {
     // change innterText
     user.wins += 0;
     computer.wins += 0;
     console.log(`user choose scissor computer choose scissor its a draw`)
-  } else if (chosenFighter === 'scissor' && computerFighter === 'villian') {
+  } else if (chosenFighter === 'scissors' && computerFighter === 'villian') {
     // change innertext
     user.wins += 1
     console.log(`user choose scissor beating villian`)
-  } else if (chosenFighter === 'scissor' && computerFighter === "paper") {
+  } else if (chosenFighter === 'scissors' && computerFighter === "paper") {
     // change innertext
     user.wins += 1
     console.log(`user choose scissor beating computer paper`)
-  } else if (chosenFighter === 'scissor' && computerFighter === 'hero'){
+  } else if (chosenFighter === 'scissors' && computerFighter === 'hero'){
     // change innertext
     computer.wins += 1
     console.log(`computer choose hero smashing scissors`)
-  } else if (chosenFighter === 'scissor' && computerFighter === 'rock'){
+  } else if (chosenFighter === 'scissors' && computerFighter === 'rock'){
     // change innertext
     computer.wins += 1
     console.log(`computer choose rock beating user scissor`)
-  } else if (chosenFighter === 'hero' && computerFighter === 'scissor' ){
+  } else if (chosenFighter === 'hero' && computerFighter === 'scissors' ){
     // change innertext
     user.wins += 1
     console.log(`user:hero smashes comp: scissor`)
@@ -151,7 +153,7 @@ function rulesInjusticeGame(chosenFighter, computerFighter) {
   // change innertext
   user.wins += 1
   console.log(`user:hero smashes comp: rock`)
-  } else if (chosenFighter === 'villian' && computerFighter === 'scissor') {
+  } else if (chosenFighter === 'villian' && computerFighter === 'scissors') {
   // change innertext
   computer.wins += 1
   console.log(`user:villian got stabbed by comp: scissor`)
@@ -164,7 +166,7 @@ function rulesInjusticeGame(chosenFighter, computerFighter) {
   // change innterText
   user.wins += 0;
   console.log(`U:villian burned comp paper`)
-  } else if ( chosenFighter === 'villain' && computerFighter === 'hero'){
+  } else if ( chosenFighter ==='villain' && computerFighter === 'hero'){
   // change innterText
   user.wins += 1;
   console.log(`U:villian defeated com: the hero`)
