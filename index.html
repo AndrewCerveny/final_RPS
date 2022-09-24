@@ -16,13 +16,13 @@
         <h3> User </h3>
         <div class="wrapper-user-wins">
         <h4> Wins </h4>
-          <p>_</p>
+          <p id='userWins'>_</p>
         </div>
         </div>
       </section>
       <!-- head page area  -->
       <section class='middle-section-wrapper'>
-      <section>
+      <section class= 'wrapper-title-subtitle'>
         <div class='wrapper-game-title'>
           <h1 class='page-title'>Rock, Paper, Scissors</h1>
           <h3 class="page-title-subtitle" id=changingPhrase>Choose your game type!</h3>
@@ -30,15 +30,15 @@
       </section>
       <!-- hidden Form Classic -->
 
-        <section class="hidden" 'fighter-form' id='fighterForm'>
+        <section class='hidden''hiddenForm' id=fighterForm>
           <div class='wrapper-hiddenForm'>
-            <h2> Choose your fighter! </h2>
-              <button class="f-button"type="submit" value="rock">🗿</button>
-              <button class="f-button"type="submit" value="paper">📄</button>
-              <button class="f-button"type="submit" value="scissors">✂️</button>
-              <button class="f-button" type="submit" value="hero" class="hiddenChar">🦸🏽‍♂️</button>
-              <button class="f-button"type="submit" value="villian" class="hiddenChar">🦹🏼‍♂️</button>
-          <button class="f-button" type="button" name="game-choice"> Change Game </button>
+            <h2 class="c-your-f"> Choose your fighter! </h2>
+              <button class="f-button" id="rockBtn"type="submit" value="rock">🗿</button>
+              <button class="f-button" id="paperBtn"type="submit" value="paper">📄</button>
+              <button class="f-button" id="scissorsBtn" type="submit" value="scissors">✂️</button>
+              <button class="hidden" "extras" type="submit" value="hero" id="hiddenHero">🦸🏽‍♂️</button>
+              <button class="hidden" type="submit" value="villian" id="hiddenVillain">🦹🏼‍♂️</button>
+          <button class="change-button" id="gameSwitch" type="button" name="game-choice"> Change Game? </button>
           </div>
         </section>
 
@@ -71,7 +71,7 @@
         <h3> Computer </h3>
         <div class="wrapper-comp-wins">
         <h4> Wins </h4>
-        <p>_</p>
+        <p id=computerWins>_</p>
         </div>
         </div>
       </section>
