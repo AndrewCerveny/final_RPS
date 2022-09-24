@@ -14,59 +14,54 @@
         <p class = 'user-icon'>👨🏽‍💻</p>
         <div class= 'user-trackpad'>
         <h3> User </h3>
-        <h4> Wins:_ </h4>
+        <div class="wrapper-user-wins">
+        <h4> Wins </h4>
+          <p id='userWins'>_</p>
         </div>
         </div>
       </section>
       <!-- head page area  -->
       <section class='middle-section-wrapper'>
-      <section>
+      <section class= 'wrapper-title-subtitle'>
         <div class='wrapper-game-title'>
           <h1 class='page-title'>Rock, Paper, Scissors</h1>
           <h3 class="page-title-subtitle" id=changingPhrase>Choose your game type!</h3>
         </div>
       </section>
       <!-- hidden Form Classic -->
-        <section class="hidden" 'classicF' id='classicForm'>
-          <h2> Choose your warrior! </h2>
-            <li>🗿 </li>
-            <li>📄 </li>
-            <li>✂️</li>
-          <button type="button" name="game-choice"> Change Game </button>
-        </section>
-      <!-- Game board display areas -->
-      <section>
-        <div class="classic-game-area" id="classicGame">
-          <h2>🗿 Classic 📄 </h2>
-            <label for="classic-rules"> Rules </label>
-              <li> rock > scissors </li>
-              <li> paper > rock </li>
-              <li> scissors > paper </li>
-        </div>
-      </section>
-      <section>
-        <!-- hidden Form injustice -->
-        <section class="hidden" 'injusticeF' id='injusticeForm'>
-          <h2> Choose your warrior! </h2>
-            <li>🗿 </li>
-            <li>📄 </li>
-            <li>✂️</li>
-            <li>🦹🏼‍♂️</li>
-            <li>🦸🏽‍♂️</li>
-          <button type="button" name="game-choice2"> Change Game </button>
-          </section>
-          <!-- injustice Game main area  -->
-        </section>
-        <div class="injustice-game-area" id="superGame">
-          <h2>🦸🏽‍♂️ Injustice Royal 🦹🏼‍♂️</h2>
-            <label for="injustice-rules"> Rules </label>
-              <li> rock > scissors & villian </li>
-              <li> paper > rock &  hero </li>
-              <li> scissors > paper & villian </li>
-              <li> villian > paper & hero  </li>
-              <li> hero > scissors & rock </li>
-        </div>
 
+        <section class='hidden''hiddenForm' id=fighterForm>
+          <div class='wrapper-hiddenForm'>
+            <h2 class="c-your-f"> Choose your fighter! </h2>
+              <button class="f-button" id="rockBtn"type="submit" value="rock">🗿</button>
+              <button class="f-button" id="paperBtn"type="submit" value="paper">📄</button>
+              <button class="f-button" id="scissorsBtn" type="submit" value="scissors">✂️</button>
+              <button class="hidden" "extras" type="submit" value="hero" id="hiddenHero">🦸🏽‍♂️</button>
+              <button class="hidden" type="submit" value="villian" id="hiddenVillain">🦹🏼‍♂️</button>
+          <button class="change-button" id="gameSwitch" type="button" name="game-choice"> Change Game? </button>
+          </div>
+        </section>
+
+      <!-- Game board display areas -->
+
+      <section class="classic-game-area" id="classicGame">
+        <h2>🗿 Classic 📄 </h2>
+          <label for="classic-rules"> Rules </label>
+            <li> rock > scissors </li>
+            <li> paper > rock </li>
+            <li> scissors > paper </li>
+      </section>
+
+          <!-- injustice Game main area  -->
+      <section class="injustice-game-area" id="superGame">
+        <h2>🦸🏽‍♂️ Injustice Royal 🦹🏼‍♂️</h2>
+          <label for="injustice-rules"> Rules </label>
+            <li> rock > scissors & villian </li>
+            <li> paper > rock &  hero </li>
+            <li> scissors > paper & villian </li>
+            <li> villian > paper & hero  </li>
+            <li> hero > scissors & rock </li>
+        </section>
       </section>
     <!-- Right side bar area -->
       <section class='right-section-wrapper'>
@@ -74,7 +69,9 @@
         <p class='computer-icon'>💻</p>
         <div class='computer-trackpad'>
         <h3> Computer </h3>
-        <h4> Wins:_ </h4>
+        <div class="wrapper-comp-wins">
+        <h4> Wins </h4>
+        <p id=computerWins>_</p>
         </div>
         </div>
       </section>
