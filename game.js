@@ -16,9 +16,9 @@ class Game {
 
   winConditions(chosenFighter,computerFighter) {
     if(this.gameSelection === 'classic') {
-      this.rulesClassicGame(chosenFighter,computerFighter);
+      this.implementsClassicGame(chosenFighter,computerFighter);
     }else {
-      this.rulesInjusticeGame(chosenFighter,computerFighter);
+      this.implementsInjusticeGame(chosenFighter,computerFighter);
     }
   }
   checkingGameType(gameChoice) {
@@ -30,7 +30,7 @@ class Game {
       this.gameFighters = ['paper','scissors','rock','villian','hero']
     }
   }
-  rulesClassicGame(chosenFighter, computerFighter) {
+  implementsClassicGame(chosenFighter, computerFighter) {
 
         if(chosenFighter === 'rock' && computerFighter === 'scissors') {
         //change innertext
@@ -76,7 +76,7 @@ class Game {
         return `unknown fighter or fighters`
       }
     }
-  rulesInjusticeGame(chosenFighter, computerFighter) {
+  implementsInjusticeGame(chosenFighter, computerFighter) {
       if(chosenFighter === 'rock' && computerFighter === 'scissors') {
       //change innertext
       this.player1 += 1;

@@ -40,11 +40,7 @@ buttonsContainer.addEventListener('click', function(event) {
 
 
 
-// rockButton.addEventListener('click', )
-// paperButton.addEventListener('click', function(event))
-// scissorsButton.addEventListener('click',)
-// hiddenHeroButton.addEventListener('click',)
-// hiddenVillainButton.addEventListener('click',)
+
 // changeGameButton.addEventListerner('click',)
 
 
@@ -78,28 +74,30 @@ function computerPlayer(gameFightersArr) {
 };
 
 function saysShoot(event) {
-  console.log("HEY", game)
  user.chosenFighter = event.target.value;
  computer.chosenFighter = computerPlayer(game.gameFighters)
  game.winConditions(user.chosenFighter, computer.chosenFighter);
- console.log("WOW", game)
-};
+ updateUserScore()
+ updateComputerScore()
+ };
 
+function updateUserScore() {
+userWinsCounter.textContent = `${game.player1}`
+}
 
-
+function updateComputerScore() {
+computerWinsCounter.textContent = `${game.player2}`;
+}
 
 
   // to change inner text eventually in box that says user selection and computer selection
-  // needs to access the + wins values for both user and computer
+  // 
   // needs to reset game
-  // genrates the computer player genenerator
 
 
 
 
-// function event({
-//   console.log()
-// })
+
 
 
 
