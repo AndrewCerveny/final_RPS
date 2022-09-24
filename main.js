@@ -54,6 +54,7 @@ function oldSchool() {
   hiddenForm.classList.remove('hidden');
   classicGameArea.classList.add('hidden');
   game.checkingGameType('classic');
+  injusticeGameArea.classList.add('hidden');
 }
 
 function royal() {
@@ -79,6 +80,7 @@ function saysShoot(event) {
  game.winConditions(user.chosenFighter, computer.chosenFighter);
  updateUserScore()
  updateComputerScore()
+ gameRef()
  };
 
 function updateUserScore() {
@@ -91,10 +93,18 @@ computerWinsCounter.textContent = `${game.player2}`;
 
 
   // to change inner text eventually in box that says user selection and computer selection
-  // 
+  //
   // needs to reset game
 
-
+function gameRef() {
+  if(game.player1 ++) {
+    gameAnnouncer.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
+  }else if(game.player2 ++) {
+    gameAnnouncer.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
+  }else {
+    gameAnnouncer.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+  }
+}
 
 
 

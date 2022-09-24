@@ -108,6 +108,7 @@ font-size: xx-large;
   flex-direction: column;
   align-items: center;
   cursor: grabbing;
+  height: 30%;
 }
 .injustice-game-area:hover {
   background-color: #caf0f8;
@@ -149,12 +150,13 @@ font-size: xx-large;
 }
 .wrapper-hiddenForm{
   display: flex;
-  flex-direction:row;
+  flex-direction: column;
   height:57%;
 }
 .change-button {
-  width: 26%;
-  height: 52%;
+  width: 23%;
+  height: 23%;
+  font-size: medium;
 }
 
 .hiddenForm {
