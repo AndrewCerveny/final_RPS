@@ -11,6 +11,7 @@ var changeGameButton = document.querySelector('#gameSwitch');
 var gameAnnouncer = document.querySelector('#changingPhrase')
 var userWinsCounter = document.querySelector('#userWins');
 var computerWinsCounter = document.querySelector('#computerWins');
+var buttonsContainer = document.querySelector('#fightersContainer')
 
 
 
@@ -29,8 +30,18 @@ var computerWinsCounter = document.querySelector('#computerWins');
 // Event Listeners
 classicGameArea.addEventListener('click', oldSchool);
 injusticeGameArea.addEventListener('click',royal);
-// rockButton.addEventListener('click',)
-// paperButton.addEventListener('click',)
+buttonsContainer.addEventListener('click', function(event) {
+  saysShoot(event);
+});
+
+
+
+
+
+
+
+// rockButton.addEventListener('click', )
+// paperButton.addEventListener('click', function(event))
 // scissorsButton.addEventListener('click',)
 // hiddenHeroButton.addEventListener('click',)
 // hiddenVillainButton.addEventListener('click',)
@@ -46,13 +57,13 @@ injusticeGameArea.addEventListener('click',royal);
 function oldSchool() {
   hiddenForm.classList.remove('hidden');
   classicGameArea.classList.add('hidden');
-  computerPlayer(classicGameFighters);
+  game.checkingGameType('classic');
 }
 
 function royal() {
   oldSchool();
   displayCharacters();
-  computerPlayer(superGameFighters);
+  game.checkingGameType('injustice');
 
 }
 function displayCharacters(){
@@ -66,9 +77,29 @@ function computerPlayer(gameFightersArr) {
   return computerFighter
 };
 
+function saysShoot(event) {
+  console.log("HEY", game)
+ user.chosenFighter = event.target.value;
+ computer.chosenFighter = computerPlayer(game.gameFighters)
+ game.winConditions(user.chosenFighter, computer.chosenFighter);
+ console.log("WOW", game)
+};
 
 
 
+
+
+  // to change inner text eventually in box that says user selection and computer selection
+  // needs to access the + wins values for both user and computer
+  // needs to reset game
+  // genrates the computer player genenerator
+
+
+
+
+// function event({
+//   console.log()
+// })
 
 
 
@@ -78,3 +109,6 @@ function computerPlayer(gameFightersArr) {
 //  variables
 var classicGameFighters = ['paper','scissors','rock']
 var superGameFighters =['paper','scissors','rock','villian','hero'];
+var user = new Player({name:'user', token:'👨🏽‍💻', wins:0});
+var computer = new Player({name:'computer', token:'💻',wins:0});
+var game = new Game(user, computer);
