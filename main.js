@@ -1,9 +1,9 @@
 // document QuerySelectors
-var classicGame = document.querySelector('#classicGame');
-var superGame = document.querySelector('#superGame');
-var classicForm = document.querySelector('#classicForm');
-var gamesContainer = document.querySelector('#gamesContainer')
-var injusticeForm = document.querySelector('#injusticeForm')
+var classicGameArea = document.querySelector('#classicGame');
+var injusticeGameArea = document.querySelector('#superGame');
+var hiddenForm = document.querySelector('#fighterForm');
+
+
 
 
 
@@ -19,7 +19,7 @@ var injusticeForm = document.querySelector('#injusticeForm')
 
 
 // Event Listeners
-classicGame.addEventListener('click',oldSchool);
+classicGameArea.addEventListener('click', oldSchool);
 
 
 
@@ -28,11 +28,11 @@ classicGame.addEventListener('click',oldSchool);
 
 
 
-//  functions
+ // functions
+
 function oldSchool() {
-  classicForm.classList.remove('hidden');
-  classicGame.classList.add('hidden');
-
+  hiddenForm.classList.remove('hidden');
+  classicGameArea.classList.add('hidden');
 }
 
 
@@ -53,4 +53,4 @@ function computerPlayer(gameFightersArr) {
 
 //  variables
 var classicGameFighters = ['paper','scissors','rock']
-var superGameFighters = ['paper','scissors','rock','villian','hero']
+var superGameFighters =['paper','scissors','rock','villian','hero'];
