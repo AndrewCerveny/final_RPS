@@ -9,6 +9,8 @@ var gameAnnouncer = document.querySelector('#changingPhrase')
 var userWinsCounter = document.querySelector('#userWins');
 var computerWinsCounter = document.querySelector('#computerWins');
 var characterButtons = document.querySelector("#charactersContainer");
+var userFighterDisplay = document.querySelector('#UserFighterExhibit');
+var computerFighterDisplay = document.querySelector('#CompFighterExhibit')
 
 
 
@@ -29,8 +31,9 @@ var characterButtons = document.querySelector("#charactersContainer");
 classicGameArea.addEventListener('click', oldSchool);
 injusticeGameArea.addEventListener('click',royal);
 characterButtons.addEventListener('click', function(event) {
-  setPlayers(event);
-  saysShoot()
+user.takesTurn(event)
+computer.takesTurn();
+saysShoot()
 });
 
 
@@ -75,22 +78,20 @@ function computerPlayer(gameFightersArr) {
 };
 
 function saysShoot() {
-  console.log("HMMM", user.chosenFighter)
  game.winConditions(user.chosenFighter, computer.chosenFighter);
  updateUserScore()
  updateComputerScore()
  };
 
-function setPlayers(){
-  console.log("YESSSHHZZ", event.target.value)
-  user.chosenFighter = event.target.value;
-  computer.chosenFighter = computerPlayer(game.gameFighters)
-  gameAnnouncer.innerText = `user has chosen ${user.chosenFighter} & computer has chosen ${computer.chosenFighter}`
-}
+// function setPlayers(){
+//   user.chosenFighter = event.target.value;
+//   computer.chosenFighter = computerPlayer(game.gameFighters)
+//   gameAnnouncer.innerText = `user has chosen ${user.chosenFighter} & computer has chosen ${computer.chosenFighter}`
+// }
 
 
-  // to change inner text eventually in box that says user selection and computer selection
-  //
+
+
   // needs to reset game
 
 function gameRef(winner) {
@@ -111,6 +112,37 @@ function updateComputerScore() {
 computerWinsCounter.textContent = `${game.player2Wins}`;
 }
 
+function matchUsersChoice() {
+  if(user.chosenFighter === 'rock') {
+    userFighterDisplay.innerText = '🗿'
+  }else if (user.chosenFighter === 'paper') {
+    userFighterDisplay.innerText = '📄'
+  }else if(user.chosenFighter === 'scissors') {
+    userFighterDisplay.innerText = '✂️'
+  }else if (user.chosenFighter === 'hero') {
+    userFighterDisplay.innerText = '🦸🏻'
+  }else if (user.chosenFighter === 'villian') {
+      userFighterDisplay.innerText = '🦹🏼‍♂️'
+  }else{
+    userFighterDisplay.innerText = '🛑'
+  }
+}
+
+function matchComputerChoice() {
+  if(computer.chosenFighter === 'rock') {
+    computerFighterDisplay.innerText = '🗿'
+  }else if (computer.chosenFighter === 'paper') {
+    computerFighterDisplay.innerText = '📄'
+  }else if(computer.chosenFighter === 'scissors') {
+    computerFighterDisplay.innerText = '✂️'
+  }else if (computer.chosenFighter === 'hero') {
+    computerFighterDisplay.innerText = '🦸🏻'
+  }else if (computer.chosenFighter === 'villian') {
+    computerFighterDisplay.innerText = '🦹🏼‍♂️'
+  }else{
+    computerFighterDisplay.innerText = '🛑'
+  }
+}
 
 
 

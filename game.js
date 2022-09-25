@@ -1,9 +1,8 @@
 
-// var competitors{
  new Player({name:'user', token:'👨🏽‍💻', wins:0});
 player2: var computer = new Player({name:'computer', token:'💻',wins:0});
 
-// }
+
 
 
 class Game {
@@ -33,9 +32,7 @@ class Game {
     }
   }
   implementsClassicGame(chosenFighter, computerFighter) {
-    console.log("BLapp", user.chosenFighter)
     if(chosenFighter === computerFighter) {
-      console.log("BLOOP", user.chosenFighter)
       gameRef('draw')
       return
     }

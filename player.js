@@ -4,13 +4,14 @@ class Player {
     this.token = contender.token;
     this.wins = contender.wins;
     this.chosenFighter = '';
-    this.myTurn = true;
   }
-  takesTurn(){
-    if (!this.myTurn) {
-      return this.myTurn = true
-    } else {
-    this.myTurn = true
+  takesTurn(pickedFighter) {
+    if(this.name === 'user') {
+      this.chosenFighter = event.target.value;
+      matchUsersChoice()
+    }else {
+      this.chosenFighter = computerPlayer(game.gameFighters)
+      matchComputerChoice()
     }
   }
 }
