@@ -12,6 +12,7 @@ var gameAnnouncer = document.querySelector('#changingPhrase')
 var userWinsCounter = document.querySelector('#userWins');
 var computerWinsCounter = document.querySelector('#computerWins');
 var buttonsContainer = document.querySelector('#fightersContainer')
+var triggerGame = document.querySelector('#triggerGame')
 
 
 
@@ -33,7 +34,7 @@ injusticeGameArea.addEventListener('click',royal);
 buttonsContainer.addEventListener('click', function(event) {
   saysShoot(event);
 });
-
+triggerGame.addEventListener('click',saysShoot)
 
 
 
@@ -63,6 +64,7 @@ function royal() {
   game.checkingGameType('injustice');
 
 }
+
 function displayCharacters(){
 hiddenHeroButton.classList.remove('hidden')
 hiddenVillainButton.classList.remove('hidden')
@@ -81,15 +83,9 @@ function saysShoot(event) {
  updateUserScore()
  updateComputerScore()
  gameRef()
- };
+};
 
-function updateUserScore() {
-userWinsCounter.textContent = `${game.player1}`
-}
 
-function updateComputerScore() {
-computerWinsCounter.textContent = `${game.player2}`;
-}
 
 
   // to change inner text eventually in box that says user selection and computer selection
@@ -102,11 +98,17 @@ function gameRef() {
   }else if(game.player2 ++) {
     gameAnnouncer.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
   }else {
-    gameAnnouncer.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+    gameAnnouncer.innerText = `🩻  ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
   }
 }
 
+function updateUserScore() {
+userWinsCounter.textContent = `${game.player1}`
+}
 
+function updateComputerScore() {
+computerWinsCounter.textContent = `${game.player2}`;
+}
 
 
 

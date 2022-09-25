@@ -50,10 +50,13 @@ font-size: xx-large;
   align-items: center;
 }
 .user-trackpad {
+  width: 49%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   height; 48%;
-  font-size: 150%
+  font-size: 150%;
+  color: white;
 }
 .wrapper-comp-wins,
 .wrapper-user-wins {
@@ -119,6 +122,7 @@ font-size: xx-large;
   flex-direction: column;
   width: 25%;
   background-color: #3c6e71
+
 }
 .computer-icon {
   font-size: 70px;
@@ -127,12 +131,18 @@ font-size: xx-large;
   display: flex;
   flex-direction: column;
   height; 48%;
-  font-size: 150%
+  font-size: 150%;
+  color: white;
 }
 .computer-scoreboard{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+#userWins,
+#computerWins {
+  border-sizing: none;
+  margin-left: 24%;
 }
 
 /* hidden form area */
@@ -153,6 +163,7 @@ font-size: xx-large;
   flex-direction: column;
   height:57%;
 }
+.game-shoot,
 .change-button {
   width: 23%;
   height: 23%;
