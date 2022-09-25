@@ -28,6 +28,7 @@ var computerFighterDisplay = document.querySelector('#CompFighterExhibit')
 
 
 // Event Listeners
+changeGameButton.addEventListener('click', backHome)
 classicGameArea.addEventListener('click', oldSchool);
 injusticeGameArea.addEventListener('click',royal);
 characterButtons.addEventListener('click', function(event) {
@@ -39,19 +40,7 @@ saysShoot()
 
 
 
-
-
-
-
-// changeGameButton.addEventListerner('click',)
-
-
-
-
-
-
- // functions
-
+// functions
 function oldSchool() {
   hiddenForm.classList.remove('hidden');
   classicGameArea.classList.add('hidden');
@@ -82,17 +71,6 @@ function saysShoot() {
  updateUserScore()
  updateComputerScore()
  };
-
-// function setPlayers(){
-//   user.chosenFighter = event.target.value;
-//   computer.chosenFighter = computerPlayer(game.gameFighters)
-//   gameAnnouncer.innerText = `user has chosen ${user.chosenFighter} & computer has chosen ${computer.chosenFighter}`
-// }
-
-
-
-
-  // needs to reset game
 
 function gameRef(winner) {
   if(winner === user.chosenFighter ) {
@@ -144,7 +122,11 @@ function matchComputerChoice() {
   }
 }
 
-
+function backHome() {
+  hiddenForm.classList.add('hidden');
+  classicGameArea.classList.remove('hidden');
+  injusticeGameArea.classList.remove('hidden');
+};
 
 
 
