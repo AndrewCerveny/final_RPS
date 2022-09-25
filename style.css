@@ -136,6 +136,7 @@ font-size: xx-large;
 .computer-trackpad {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height; 48%;
   font-size: 150%;
   color: white;
