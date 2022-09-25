@@ -11,6 +11,7 @@ var changeGameButton = document.querySelector('#gameSwitch');
 var gameAnnouncer = document.querySelector('#changingPhrase')
 var userWinsCounter = document.querySelector('#userWins');
 var computerWinsCounter = document.querySelector('#computerWins');
+var buttonsContainer = document.querySelector('#fightersContainer')
 
 
 
@@ -29,11 +30,17 @@ var computerWinsCounter = document.querySelector('#computerWins');
 // Event Listeners
 classicGameArea.addEventListener('click', oldSchool);
 injusticeGameArea.addEventListener('click',royal);
-// rockButton.addEventListener('click',)
-// paperButton.addEventListener('click',)
-// scissorsButton.addEventListener('click',)
-// hiddenHeroButton.addEventListener('click',)
-// hiddenVillainButton.addEventListener('click',)
+buttonsContainer.addEventListener('click', function(event) {
+  saysShoot(event);
+});
+
+
+
+
+
+
+
+
 // changeGameButton.addEventListerner('click',)
 
 
@@ -46,13 +53,14 @@ injusticeGameArea.addEventListener('click',royal);
 function oldSchool() {
   hiddenForm.classList.remove('hidden');
   classicGameArea.classList.add('hidden');
-  computerPlayer(classicGameFighters);
+  game.checkingGameType('classic');
+  injusticeGameArea.classList.add('hidden');
 }
 
 function royal() {
   oldSchool();
   displayCharacters();
-  computerPlayer(superGameFighters);
+  game.checkingGameType('injustice');
 
 }
 function displayCharacters(){
@@ -66,6 +74,37 @@ function computerPlayer(gameFightersArr) {
   return computerFighter
 };
 
+function saysShoot(event) {
+ user.chosenFighter = event.target.value;
+ computer.chosenFighter = computerPlayer(game.gameFighters)
+ game.winConditions(user.chosenFighter, computer.chosenFighter);
+ updateUserScore()
+ updateComputerScore()
+ gameRef()
+ };
+
+function updateUserScore() {
+userWinsCounter.textContent = `${game.player1}`
+}
+
+function updateComputerScore() {
+computerWinsCounter.textContent = `${game.player2}`;
+}
+
+
+  // to change inner text eventually in box that says user selection and computer selection
+  //
+  // needs to reset game
+
+function gameRef() {
+  if(game.player1 ++) {
+    gameAnnouncer.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
+  }else if(game.player2 ++) {
+    gameAnnouncer.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
+  }else {
+    gameAnnouncer.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+  }
+}
 
 
 
@@ -78,3 +117,6 @@ function computerPlayer(gameFightersArr) {
 //  variables
 var classicGameFighters = ['paper','scissors','rock']
 var superGameFighters =['paper','scissors','rock','villian','hero'];
+var user = new Player({name:'user', token:'👨🏽‍💻', wins:0});
+var computer = new Player({name:'computer', token:'💻',wins:0});
+var game = new Game(user, computer);
