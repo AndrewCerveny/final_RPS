@@ -4,15 +4,12 @@ var injusticeGameArea = document.querySelector('#superGame');
 var hiddenForm = document.querySelector('#fighterForm');
 var hiddenHeroButton = document.querySelector('#hiddenHero');
 var hiddenVillainButton = document.querySelector('#hiddenVillain');
-var rockButton = document.querySelector('#rockBtn');
-var paperButton = document.querySelector('#paperBtn');
-var scissorsButton = document.querySelector('#scissorsBtn');
 var changeGameButton = document.querySelector('#gameSwitch');
 var gameAnnouncer = document.querySelector('#changingPhrase')
 var userWinsCounter = document.querySelector('#userWins');
 var computerWinsCounter = document.querySelector('#computerWins');
-var buttonsContainer = document.querySelector('#fightersContainer')
-var triggerGame = document.querySelector('#triggerGame')
+var characterButtons = document.querySelector("#charactersContainer");
+
 
 
 
@@ -31,10 +28,11 @@ var triggerGame = document.querySelector('#triggerGame')
 // Event Listeners
 classicGameArea.addEventListener('click', oldSchool);
 injusticeGameArea.addEventListener('click',royal);
-buttonsContainer.addEventListener('click', function(event) {
-  saysShoot(event);
+characterButtons.addEventListener('click', function(event) {
+  setPlayers(event);
+  saysShoot()
 });
-triggerGame.addEventListener('click',saysShoot)
+
 
 
 
@@ -76,38 +74,41 @@ function computerPlayer(gameFightersArr) {
   return computerFighter
 };
 
-function saysShoot(event) {
- user.chosenFighter = event.target.value;
- computer.chosenFighter = computerPlayer(game.gameFighters)
+function saysShoot() {
+  console.log("HMMM", user.chosenFighter)
  game.winConditions(user.chosenFighter, computer.chosenFighter);
  updateUserScore()
  updateComputerScore()
- gameRef()
-};
+ };
 
-
+function setPlayers(){
+  console.log("YESSSHHZZ", event.target.value)
+  user.chosenFighter = event.target.value;
+  computer.chosenFighter = computerPlayer(game.gameFighters)
+  gameAnnouncer.innerText = `user has chosen ${user.chosenFighter} & computer has chosen ${computer.chosenFighter}`
+}
 
 
   // to change inner text eventually in box that says user selection and computer selection
   //
   // needs to reset game
 
-function gameRef() {
-  if(game.player1 ++) {
-    gameAnnouncer.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
-  }else if(game.player2 ++) {
+function gameRef(winner) {
+  if(winner === user.chosenFighter ) {
+  gameAnnouncer.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
+  }else if(winner === computer.chosenFighter ) {
     gameAnnouncer.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
   }else {
-    gameAnnouncer.innerText = `🩻  ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+    gameAnnouncer.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
   }
 }
 
 function updateUserScore() {
-userWinsCounter.textContent = `${game.player1}`
+userWinsCounter.textContent = `${game.player1Wins}`
 }
 
 function updateComputerScore() {
-computerWinsCounter.textContent = `${game.player2}`;
+computerWinsCounter.textContent = `${game.player2Wins}`;
 }
 
 
