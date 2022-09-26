@@ -34,90 +34,95 @@ class Game {
   implementsClassicGame(chosenFighter, computerFighter) {
     if(chosenFighter === computerFighter) {
       gameRef('draw')
-      return
-    }
 
-    if(chosenFighter === 'rock' && computerFighter === 'scissors') {
+    }else if(chosenFighter === 'rock' && computerFighter === 'scissors') {
         this.gameVictor = chosenFighter
         this.player1Wins += 1;
-        } else if (chosenFighter === 'rock' && computerFighter === 'paper') {
+    } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
         this.gameVictor = computerFighter
         this.player2Wins += 1;
-        } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
+    } else if(chosenFighter === 'paper' && computerFighter === 'scissors') {
         this.gameVictor = computerFighter
         this.player2Wins += 1;
-        } else if (chosenFighter === 'paper' && computerFighter === 'rock') {
+    } else if(chosenFighter === 'paper' && computerFighter === 'rock') {
         this.gameVictor = chosenFighter
         this.player1Wins += 1;
-        }else if (chosenFighter === 'scissors' && computerFighter === 'rock') {
+    }else if(chosenFighter === 'scissors' && computerFighter === 'rock') {
         this.gameVictor = computerFighter
         this.player2Wins += 1;
-      } else if (chosenFighter === 'scissors' && computerFighter === 'paper') {
+    } else if(chosenFighter === 'scissors' && computerFighter === 'paper') {
         this.gameVictor = chosenFighter
         this.player1Wins += 1;
-      }else{
+    }else{
         return `unknown fighter or fighters`
-      }
-      gameRef(this.gameVictor)
     }
+    gameRef(this.gameVictor)
+  }
   implementsInjusticeGame(chosenFighter, computerFighter) {
-      if(chosenFighter === 'rock' && computerFighter === 'scissors') {
-        this.player1Wins += 1;
-      } else if(chosenFighter === 'rock' && computerFighter === 'villian') {
-        this.player1Wins += 1;
-      } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
-        this.player2Wins += 1;
-      } else if(chosenFighter === 'rock' && computerFighter === 'hero'){
+    if(chosenFighter === computerFighter) {
+      gameRef('draw')
+    }else if(chosenFighter === 'rock' && computerFighter === 'scissors') {
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1;
+    } else if(chosenFighter === 'rock' && computerFighter === 'villian') {
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1;
+    } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
+      this.gameVictor = computerFighter;
       this.player2Wins += 1;
-      } else if (chosenFighter === 'rock' && computerFighter === 'rock') {
-        this.player1Wins += 0;
-        this.player2Wins += 0;
-      } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
-        this.player2Wins += 1;
-      } else if (chosenFighter === 'paper' && computerFighter === 'villian') {
-        this.player2Wins += 1;
-      } else if (chosenFighter === 'paper' && computerFighter === 'rock') {
-        this.player1Wins += 1;
-      } else if (chosenFighter === 'paper' && computerFighter === 'hero') {
-        this.player1Wins += 1;
-      } else if (chosenFighter === 'paper' && computerFighter === 'paper') {
-        this.player1Wins += 0;
-        this.player2Wins += 0;
-      } else if (chosenFighter === 'scissors' && computerFighter === 'scissors') {
-        this.player1Wins += 0;
-        this.player2Wins += 0;
-      } else if (chosenFighter === 'scissors' && computerFighter === 'villian') {
-        this.player1Wins += 1
-      } else if (chosenFighter === 'scissors' && computerFighter === "paper") {
-        this.player1Wins += 1
-      } else if (chosenFighter === 'scissors' && computerFighter === 'hero'){
-        this.player2Wins += 1
-      } else if (chosenFighter === 'scissors' && computerFighter === 'rock'){
-        this.player2Wins += 1
-      } else if (chosenFighter === 'hero' && computerFighter === 'scissors' ){
-        this.player1Wins += 1
-      } else if (chosenFighter === 'hero' && computerFighter === 'villian'){
-        this.player2Wins += 1
-      } else if (chosenFighter === 'hero' && computerFighter === 'paper' ) {
-        this.player2Wins += 1
-      } else if (chosenFighter === 'hero' && computerFighter ==='hero') {
-        this.player1Wins += 0;
-        this.player2Wins += 0;
-      } else if (chosenFighter === 'hero' && computerFighter === 'rock'){
-        this.player1Wins += 1
-      } else if (chosenFighter === 'villian' && computerFighter === 'scissors') {
-        this.player2Wins += 1
-      } else if (chosenFighter === 'villian' && computerFighter === 'villain') {
-        this.player1Wins += 0;
-        this.player2Wins += 0;
-      } else if (chosenFighter === 'villain' && computerFighter === 'paper') {
-        this.player1Wins += 0;
-      } else if ( chosenFighter ==='villain' && computerFighter === 'hero'){
-        this.player1Wins += 1;
-      } else if (chosenFighter === 'villain' && computerFighter === 'rock') {
-        this.player2Wins += 1;
-      } else {
-        return `Unknown fighter or fighters`
+    } else if(chosenFighter === 'rock' && computerFighter === 'hero'){
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1;
+    }else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1;
+    } else if (chosenFighter === 'paper' && computerFighter === 'villian') {
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1;
+    } else if (chosenFighter === 'paper' && computerFighter === 'rock') {
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1;
+    } else if (chosenFighter === 'paper' && computerFighter === 'hero') {
+      this.gameVictor = chosenFighter
+      this.player1Wins += 1;
+    } else if (chosenFighter === 'scissors' && computerFighter === 'villian') {
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1
+    } else if (chosenFighter === 'scissors' && computerFighter === "paper") {
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1
+    } else if (chosenFighter === 'scissors' && computerFighter === 'hero'){
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1
+    } else if (chosenFighter === 'scissors' && computerFighter === 'rock'){
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1
+    } else if (chosenFighter === 'hero' && computerFighter === 'scissors' ){
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1
+    } else if (chosenFighter === 'hero' && computerFighter === 'villian'){
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1
+    } else if (chosenFighter === 'hero' && computerFighter === 'paper' ) {
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1
+    } else if (chosenFighter === 'hero' && computerFighter === 'rock'){
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1
+    } else if (chosenFighter === 'villian' && computerFighter === 'scissors') {
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1
+    } else if (chosenFighter === 'villain' && computerFighter === 'paper') {
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1;
+    } else if ( chosenFighter ==='villain' && computerFighter === 'hero'){
+      this.gameVictor = chosenFighter;
+      this.player1Wins += 1;
+    } else if (chosenFighter === 'villain' && computerFighter === 'rock') {
+      this.gameVictor = computerFighter;
+      this.player2Wins += 1;
+    } else {
+      return `Unknown fighter or fighters`
       }
       gameRef()
     }

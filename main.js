@@ -10,7 +10,7 @@ var userWinsCounter = document.querySelector('#userWins');
 var computerWinsCounter = document.querySelector('#computerWins');
 var characterButtons = document.querySelector("#charactersContainer");
 var userFighterDisplay = document.querySelector('#UserFighterExhibit');
-var computerFighterDisplay = document.querySelector('#CompFighterExhibit')
+var computerFighterDisplay = document.querySelector('#CompFighterExhibit');
 
 
 
