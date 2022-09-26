@@ -27,7 +27,7 @@ class Game {
       this.gameFighters = ['paper','scissors','rock']
     }else {
       this.gameSelection = 'injustice'
-      this.gameFighters = ['paper','scissors','rock','villian','hero']
+      this.gameFighters = ['paper','scissors','rock','villain','hero']
     }
   }
   implementsClassicGame(chosenFighter, computerFighter) {
@@ -62,7 +62,7 @@ class Game {
     }else if(chosenFighter === 'rock' && computerFighter === 'scissors') {
       this.gameVictor = chosenFighter;
       this.player1Wins += 1;
-    } else if(chosenFighter === 'rock' && computerFighter === 'villian') {
+    } else if(chosenFighter === 'rock' && computerFighter === 'villain') {
       this.gameVictor = chosenFighter;
       this.player1Wins += 1;
     } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
@@ -74,7 +74,7 @@ class Game {
     } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
       this.gameVictor = computerFighter;
       this.player2Wins += 1;
-    } else if (chosenFighter === 'paper' && computerFighter === 'villian') {
+    } else if (chosenFighter === 'paper' && computerFighter === 'villain') {
       this.gameVictor = computerFighter;
       this.player2Wins += 1;
     } else if (chosenFighter === 'paper' && computerFighter === 'rock') {
@@ -83,7 +83,7 @@ class Game {
     } else if (chosenFighter === 'paper' && computerFighter === 'hero') {
       this.gameVictor = chosenFighter
       this.player1Wins += 1;
-    } else if (chosenFighter === 'scissors' && computerFighter === 'villian') {
+    } else if (chosenFighter === 'scissors' && computerFighter === 'villain') {
       this.gameVictor = chosenFighter;
       this.player1Wins += 1
     } else if (chosenFighter === 'scissors' && computerFighter === "paper") {
@@ -98,7 +98,7 @@ class Game {
     } else if (chosenFighter === 'hero' && computerFighter === 'scissors' ){
       this.gameVictor = chosenFighter;
       this.player1Wins += 1
-    } else if (chosenFighter === 'hero' && computerFighter === 'villian'){
+    } else if (chosenFighter === 'hero' && computerFighter === 'villain'){
       this.gameVictor = computerFighter;
       this.player2Wins += 1
     } else if (chosenFighter === 'hero' && computerFighter === 'paper' ) {
@@ -107,13 +107,13 @@ class Game {
     } else if (chosenFighter === 'hero' && computerFighter === 'rock'){
       this.gameVictor = chosenFighter;
       this.player1Wins += 1
-    } else if (chosenFighter === 'villian' && computerFighter === 'scissors') {
+    } else if (chosenFighter === 'villain' && computerFighter === 'scissors') {
       this.gameVictor = computerFighter;
       this.player2Wins += 1
     } else if (chosenFighter === 'villain' && computerFighter === 'paper') {
       this.gameVictor = chosenFighter;
       this.player1Wins += 1;
-    } else if ( chosenFighter ==='villain' && computerFighter === 'hero'){
+    } else if (chosenFighter === 'villain' && computerFighter === 'hero'){
       this.gameVictor = chosenFighter;
       this.player1Wins += 1;
     } else if (chosenFighter === 'villain' && computerFighter === 'rock') {
