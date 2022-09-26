@@ -35,7 +35,6 @@ characterButtons.addEventListener('click', function(event) {
 user.takesTurn(event)
 computer.takesTurn();
 saysShoot()
-winnerDisplay.classList.remove('hidden')
 });
 
 
@@ -71,16 +70,22 @@ function saysShoot() {
  game.winConditions(user.chosenFighter, computer.chosenFighter);
  updateUserScore()
  updateComputerScore()
+ displayWinner(game.gameVictor)
  };
 
 function gameRef(winner) {
+  winnerDisplay.classList.remove('hidden')
   if(winner === user.chosenFighter ) {
-  gameAnnouncer.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
-  }else if(winner === computer.chosenFighter ) {
-    gameAnnouncer.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
+  gameAnnouncer.innerText = `Winner: ${game.gameVictor}`
+  winnerDisplay.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
+  }else if(winner === computer.chosenFighter) {
+    gameAnnouncer.innerText = `Winner: ${game.gameVictor}`
+    winnerDisplay.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
   }else {
-    gameAnnouncer.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+    gameAnnouncer.innerText = `Winner: NONE `
+      winnerDisplay.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
   }
+  
 }
 
 function updateUserScore() {
@@ -129,10 +134,6 @@ function backHome() {
   injusticeGameArea.classList.remove('hidden');
 };
 
-function displayWinner(){
-  winnerDisplay.classList.remove('hidden')
-  winnerDisplay.innertext = `winner: ${game.gameVictor}`
-}
 
 
 

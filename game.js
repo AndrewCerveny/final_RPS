@@ -15,7 +15,6 @@ class Game {
   }
 
   winConditions(chosenFighter,computerFighter) {
-    console.log("THANKYOU", user.chosenFighter)
     if(this.gameSelection === 'classic') {
       this.implementsClassicGame(chosenFighter,computerFighter);
     }else {
@@ -34,25 +33,24 @@ class Game {
   implementsClassicGame(chosenFighter, computerFighter) {
     if(chosenFighter === computerFighter) {
       gameRef('draw')
-
     }else if(chosenFighter === 'rock' && computerFighter === 'scissors') {
-        this.gameVictor = chosenFighter
-        this.player1Wins += 1;
+      this.gameVictor = chosenFighter
+      this.player1Wins += 1;
     } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
-        this.gameVictor = computerFighter
-        this.player2Wins += 1;
+      this.gameVictor = computerFighter
+      this.player2Wins += 1;
     } else if(chosenFighter === 'paper' && computerFighter === 'scissors') {
-        this.gameVictor = computerFighter
-        this.player2Wins += 1;
+      this.gameVictor = computerFighter
+      this.player2Wins += 1;
     } else if(chosenFighter === 'paper' && computerFighter === 'rock') {
-        this.gameVictor = chosenFighter
-        this.player1Wins += 1;
+      this.gameVictor = chosenFighter
+      this.player1Wins += 1;
     }else if(chosenFighter === 'scissors' && computerFighter === 'rock') {
-        this.gameVictor = computerFighter
-        this.player2Wins += 1;
+      this.gameVictor = computerFighter
+      this.player2Wins += 1;
     } else if(chosenFighter === 'scissors' && computerFighter === 'paper') {
-        this.gameVictor = chosenFighter
-        this.player1Wins += 1;
+      this.gameVictor = chosenFighter
+      this.player1Wins += 1;
     }else{
         return `unknown fighter or fighters`
     }
@@ -73,7 +71,7 @@ class Game {
     } else if(chosenFighter === 'rock' && computerFighter === 'hero'){
       this.gameVictor = computerFighter;
       this.player2Wins += 1;
-    }else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
+    } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
       this.gameVictor = computerFighter;
       this.player2Wins += 1;
     } else if (chosenFighter === 'paper' && computerFighter === 'villian') {
@@ -123,9 +121,9 @@ class Game {
       this.player2Wins += 1;
     } else {
       return `Unknown fighter or fighters`
-      }
-      gameRef(this.gameVictor)
     }
+      gameRef(this.gameVictor)
+  }
 }
 
 
