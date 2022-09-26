@@ -1,6 +1,6 @@
 
- new Player({name:'user', token:'👨🏽‍💻', wins:0});
-player2: var computer = new Player({name:'computer', token:'💻',wins:0});
+ new Player({name:'user', token:'', wins:0});
+player2: var computer = new Player({name:'computer', token:'',wins:0});
 
 
 
@@ -14,11 +14,11 @@ class Game {
     this.gameVictor = '';
   }
 
-  winConditions(chosenFighter,computerFighter) {
+  winConditions(user.token,computer.token) {
     if(this.gameSelection === 'classic') {
-      this.implementsClassicGame(chosenFighter,computerFighter);
+      this.implementsClassicGame(user.token,computer.token);
     }else {
-      this.implementsInjusticeGame(chosenFighter,computerFighter);
+      this.implementsInjusticeGame(user.token,computer.token);
     }
   }
   checkingGameType(gameChoice) {
@@ -30,94 +30,94 @@ class Game {
       this.gameFighters = ['paper','scissors','rock','villain','hero']
     }
   }
-  implementsClassicGame(chosenFighter, computerFighter) {
-    if(chosenFighter === computerFighter) {
+  implementsClassicGame(user.token, computer.token) {
+    if(user.token === computer.token) {
       gameRef('draw')
-    }else if(chosenFighter === 'rock' && computerFighter === 'scissors') {
-      this.gameVictor = chosenFighter
+    }else if(user.token === 'rock' && computer.token === 'scissors') {
+      this.gameVictor = user.token
       this.player1Wins += 1;
-    } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
-      this.gameVictor = computerFighter
+    } else if(user.token === 'rock' && computer.token === 'paper') {
+      this.gameVictor = computer.token
       this.player2Wins += 1;
-    } else if(chosenFighter === 'paper' && computerFighter === 'scissors') {
-      this.gameVictor = computerFighter
+    } else if(user.token === 'paper' && computer.token === 'scissors') {
+      this.gameVictor = computer.token
       this.player2Wins += 1;
-    } else if(chosenFighter === 'paper' && computerFighter === 'rock') {
-      this.gameVictor = chosenFighter
+    } else if(user.token === 'paper' && computer.token === 'rock') {
+      this.gameVictor = user.token
       this.player1Wins += 1;
-    }else if(chosenFighter === 'scissors' && computerFighter === 'rock') {
-      this.gameVictor = computerFighter
+    }else if(user.token === 'scissors' && computer.token === 'rock') {
+      this.gameVictor = computer.token
       this.player2Wins += 1;
-    } else if(chosenFighter === 'scissors' && computerFighter === 'paper') {
-      this.gameVictor = chosenFighter
+    } else if(user.token === 'scissors' && computer.token === 'paper') {
+      this.gameVictor = user.token
       this.player1Wins += 1;
     }else{
         return `unknown fighter or fighters`
     }
     gameRef(this.gameVictor)
   }
-  implementsInjusticeGame(chosenFighter, computerFighter) {
-    if(chosenFighter === computerFighter) {
+  implementsInjusticeGame(user.token, computer.token) {
+    if(user.token === computer.token) {
       gameRef('draw')
-    }else if(chosenFighter === 'rock' && computerFighter === 'scissors') {
-      this.gameVictor = chosenFighter;
+    }else if(user.token === 'rock' && computer.token === 'scissors') {
+      this.gameVictor = user.token;
       this.player1Wins += 1;
-    } else if(chosenFighter === 'rock' && computerFighter === 'villain') {
-      this.gameVictor = chosenFighter;
+    } else if(user.token === 'rock' && computer.token === 'villain') {
+      this.gameVictor = user.token;
       this.player1Wins += 1;
-    } else if(chosenFighter === 'rock' && computerFighter === 'paper') {
-      this.gameVictor = computerFighter;
+    } else if(user.token === 'rock' && computer.token === 'paper') {
+      this.gameVictor = computer.token;
       this.player2Wins += 1;
-    } else if(chosenFighter === 'rock' && computerFighter === 'hero'){
-      this.gameVictor = computerFighter;
+    } else if(user.token === 'rock' && computer.token === 'hero'){
+      this.gameVictor = computer.token;
       this.player2Wins += 1;
-    } else if (chosenFighter === 'paper' && computerFighter === 'scissors') {
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'paper' && computer.token === 'scissors') {
+      this.gameVictor = computer.token;
       this.player2Wins += 1;
-    } else if (chosenFighter === 'paper' && computerFighter === 'villain') {
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'paper' && computer.token === 'villain') {
+      this.gameVictor = computer.token;
       this.player2Wins += 1;
-    } else if (chosenFighter === 'paper' && computerFighter === 'rock') {
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'paper' && computer.token === 'rock') {
+      this.gameVictor = user.token;
       this.player1Wins += 1;
-    } else if (chosenFighter === 'paper' && computerFighter === 'hero') {
-      this.gameVictor = chosenFighter
+    } else if (user.token === 'paper' && computer.token === 'hero') {
+      this.gameVictor = user.token
       this.player1Wins += 1;
-    } else if (chosenFighter === 'scissors' && computerFighter === 'villain') {
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'scissors' && computer.token === 'villain') {
+      this.gameVictor = user.token;
       this.player1Wins += 1
-    } else if (chosenFighter === 'scissors' && computerFighter === "paper") {
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'scissors' && computer.token === "paper") {
+      this.gameVictor = user.token;
       this.player1Wins += 1
-    } else if (chosenFighter === 'scissors' && computerFighter === 'hero'){
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'scissors' && computer.token === 'hero'){
+      this.gameVictor = computer.token;
       this.player2Wins += 1
-    } else if (chosenFighter === 'scissors' && computerFighter === 'rock'){
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'scissors' && computer.token === 'rock'){
+      this.gameVictor = computer.token;
       this.player2Wins += 1
-    } else if (chosenFighter === 'hero' && computerFighter === 'scissors' ){
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'hero' && computer.token === 'scissors' ){
+      this.gameVictor = user.token;
       this.player1Wins += 1
-    } else if (chosenFighter === 'hero' && computerFighter === 'villain'){
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'hero' && computer.token === 'villain'){
+      this.gameVictor = computer.token;
       this.player2Wins += 1
-    } else if (chosenFighter === 'hero' && computerFighter === 'paper' ) {
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'hero' && computer.token === 'paper' ) {
+      this.gameVictor = computer.token;
       this.player2Wins += 1
-    } else if (chosenFighter === 'hero' && computerFighter === 'rock'){
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'hero' && computer.token === 'rock'){
+      this.gameVictor = user.token;
       this.player1Wins += 1
-    } else if (chosenFighter === 'villain' && computerFighter === 'scissors') {
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'villain' && computer.token === 'scissors') {
+      this.gameVictor = computer.token;
       this.player2Wins += 1
-    } else if (chosenFighter === 'villain' && computerFighter === 'paper') {
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'villain' && computer.token === 'paper') {
+      this.gameVictor = user.token;
       this.player1Wins += 1;
-    } else if (chosenFighter === 'villain' && computerFighter === 'hero'){
-      this.gameVictor = chosenFighter;
+    } else if (user.token === 'villain' && computer.token === 'hero'){
+      this.gameVictor = user.token;
       this.player1Wins += 1;
-    } else if (chosenFighter === 'villain' && computerFighter === 'rock') {
-      this.gameVictor = computerFighter;
+    } else if (user.token === 'villain' && computer.token === 'rock') {
+      this.gameVictor = computer.token;
       this.player2Wins += 1;
     } else {
       return `Unknown fighter or fighters`

@@ -1,16 +1,15 @@
 class Player {
   constructor(contender) {
     this.name = contender.name;
-    this.token = contender.token;
+    this.token = '';
     this.wins = contender.wins;
-    this.chosenFighter = '';
   }
   takesTurn(pickedFighter) {
     if(this.name === 'user') {
-      this.chosenFighter = event.target.value;
+      this.token = event.target.value;
       matchUsersChoice()
     }else {
-      this.chosenFighter = computerPlayer(game.gameFighters)
+      this.token = computerPlayer(game.gameFighters)
       matchComputerChoice()
     }
   }
