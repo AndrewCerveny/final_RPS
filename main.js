@@ -11,7 +11,7 @@ var computerWinsCounter = document.querySelector('#computerWins');
 var characterButtons = document.querySelector("#charactersContainer");
 var userFighterDisplay = document.querySelector('#UserFighterExhibit');
 var computerFighterDisplay = document.querySelector('#CompFighterExhibit');
-
+var winnerDisplay = document.querySelector('#champDisplay')
 
 
 
@@ -35,6 +35,7 @@ characterButtons.addEventListener('click', function(event) {
 user.takesTurn(event)
 computer.takesTurn();
 saysShoot()
+winnerDisplay.classList.remove('hidden')
 });
 
 
@@ -127,6 +128,11 @@ function backHome() {
   classicGameArea.classList.remove('hidden');
   injusticeGameArea.classList.remove('hidden');
 };
+
+function displayWinner(){
+  winnerDisplay.classList.remove('hidden')
+  winnerDisplay.innertext = `winner: ${game.gameVictor}`
+}
 
 
 
