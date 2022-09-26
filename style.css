@@ -94,10 +94,11 @@ font-size: xx-large;
 
 }
 .page-title {
-  font-size: 153%;
+  font-size: 165%;
 }
 .page-title-subtitle{
-  font-size: 107%;
+  font-size: x-large;
+  color: darkred;
 }
 .classic-game-area{
   display: flex;
@@ -168,6 +169,7 @@ font-size: xx-large;
 .wrapper-hiddenForm{
   display: flex;
   flex-direction: column;
+  align-items: center;
   height:57%;
 }
 .game-shoot,
@@ -187,6 +189,11 @@ font-size: xx-large;
   display: flex;
   flex-direction: column;
 }
+
+.winner-display{
+  font-size: x-large;
+}
+
 
 .hidden {
   display: none;

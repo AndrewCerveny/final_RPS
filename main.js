@@ -11,7 +11,7 @@ var computerWinsCounter = document.querySelector('#computerWins');
 var characterButtons = document.querySelector("#charactersContainer");
 var userFighterDisplay = document.querySelector('#UserFighterExhibit');
 var computerFighterDisplay = document.querySelector('#CompFighterExhibit');
-
+var winnerDisplay = document.querySelector('#champDisplay')
 
 
 
@@ -70,15 +70,19 @@ function saysShoot() {
  game.winConditions(user.chosenFighter, computer.chosenFighter);
  updateUserScore()
  updateComputerScore()
- };
+};
 
 function gameRef(winner) {
+  winnerDisplay.classList.remove('hidden')
   if(winner === user.chosenFighter ) {
-  gameAnnouncer.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
-  }else if(winner === computer.chosenFighter ) {
-    gameAnnouncer.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
+    gameAnnouncer.innerText = `Winner: ${user.name}`
+    winnerDisplay.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
+  }else if(winner === computer.chosenFighter) {
+    gameAnnouncer.innerText = `Winner: ${computer.name}`
+    winnerDisplay.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
   }else {
-    gameAnnouncer.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+    gameAnnouncer.innerText = `Winner: NONE `
+    winnerDisplay.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
   }
 }
 
@@ -99,10 +103,11 @@ function matchUsersChoice() {
     userFighterDisplay.innerText = '✂️'
   }else if (user.chosenFighter === 'hero') {
     userFighterDisplay.innerText = '🦸🏽‍♂️'
-  }else if (user.chosenFighter === 'villian') {
+  }else if (user.chosenFighter === 'villain') {
       userFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{
     userFighterDisplay.innerText = '🛑'
+
   }
 }
 
@@ -115,7 +120,7 @@ function matchComputerChoice() {
     computerFighterDisplay.innerText = '✂️'
   }else if (computer.chosenFighter === 'hero') {
     computerFighterDisplay.innerText = '🦸🏽‍♂️'
-  }else if (computer.chosenFighter === 'villian') {
+  }else if (computer.chosenFighter === 'villain') {
     computerFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{
     computerFighterDisplay.innerText = '🛑'
@@ -131,9 +136,10 @@ function backHome() {
 
 
 
+
 //  variables
 var classicGameFighters = ['paper','scissors','rock']
-var superGameFighters =['paper','scissors','rock','villian','hero'];
+var superGameFighters =['paper','scissors','rock','villain','hero'];
 var user = new Player({name:'user', token:'👨🏽‍💻', wins:0});
 var computer = new Player({name:'computer', token:'💻',wins:0});
 var game = new Game(user, computer);
