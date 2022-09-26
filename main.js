@@ -60,6 +60,10 @@ function displayCharacters(){
 hiddenHeroButton.classList.remove('hidden')
 hiddenVillainButton.classList.remove('hidden')
 }
+function hideCharacters() {
+  hiddenHeroButton.classList.add('hidden')
+  hiddenVillainButton.classList.add('hidden')
+};
 
 function computerPlayer(gameFightersArr) {
   var randomIndex = Math.floor(Math.random() * gameFightersArr.length)
@@ -132,6 +136,7 @@ function backHome() {
   hiddenForm.classList.add('hidden');
   classicGameArea.classList.remove('hidden');
   injusticeGameArea.classList.remove('hidden');
+  hideCharacters()
 };
 
 function reset() {
@@ -139,7 +144,7 @@ function reset() {
   game.player2Wins = 0;
   userFighterDisplay.innerText = 'Fighter';
   computerFighterDisplay.innerText = 'Fighter';
-}
+};
 
 
 
