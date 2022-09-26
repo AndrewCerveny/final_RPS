@@ -75,10 +75,10 @@ function saysShoot() {
 function gameRef(winner) {
   winnerDisplay.classList.remove('hidden')
   if(winner === user.chosenFighter ) {
-    gameAnnouncer.innerText = `Winner: ${game.gameVictor}`
+    gameAnnouncer.innerText = `Winner: ${user.name}`
     winnerDisplay.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
   }else if(winner === computer.chosenFighter) {
-    gameAnnouncer.innerText = `Winner: ${game.gameVictor}`
+    gameAnnouncer.innerText = `Winner: ${computer.name}`
     winnerDisplay.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
   }else {
     gameAnnouncer.innerText = `Winner: NONE `
@@ -107,7 +107,7 @@ function matchUsersChoice() {
       userFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{
     userFighterDisplay.innerText = '🛑'
-    console.log("WHAT", user.chosenFighter)
+
   }
 }
 
