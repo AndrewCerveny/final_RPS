@@ -144,7 +144,7 @@ function reset() {
   game.player2Wins = 0;
   userFighterDisplay.innerText = 'Fighter';
   computerFighterDisplay.innerText = 'Fighter';
-}
+};
 
 
 
