@@ -98,7 +98,7 @@ function matchUsersChoice() {
   }else if(user.chosenFighter === 'scissors') {
     userFighterDisplay.innerText = '✂️'
   }else if (user.chosenFighter === 'hero') {
-    userFighterDisplay.innerText = '🦸🏻'
+    userFighterDisplay.innerText = '🦸🏽‍♂️'
   }else if (user.chosenFighter === 'villian') {
       userFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{
@@ -114,7 +114,7 @@ function matchComputerChoice() {
   }else if(computer.chosenFighter === 'scissors') {
     computerFighterDisplay.innerText = '✂️'
   }else if (computer.chosenFighter === 'hero') {
-    computerFighterDisplay.innerText = '🦸🏻'
+    computerFighterDisplay.innerText = '🦸🏽‍♂️'
   }else if (computer.chosenFighter === 'villian') {
     computerFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{

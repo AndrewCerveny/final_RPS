@@ -124,7 +124,7 @@ class Game {
     } else {
       return `Unknown fighter or fighters`
       }
-      gameRef()
+      gameRef(this.gameVictor)
     }
 }
 
