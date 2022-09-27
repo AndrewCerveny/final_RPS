@@ -36,7 +36,7 @@ user.takesTurn(event)
 computer.takesTurn();
 saysShoot()
 });
-newGame.addEventListener('click',reset)
+newGame.addEventListener('click',timeOut)
 
 
 
@@ -140,7 +140,7 @@ function backHome() {
   hideCharacters()
 };
 
-function reset() {
+function timeOut() {
   game.player1Wins = 0;
   game.player2Wins = 0;
   userFighterDisplay.innerText = 'Fighter';
