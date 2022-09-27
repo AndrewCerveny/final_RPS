@@ -67,14 +67,15 @@ function hideCharacters() {
 
 function computerPlayer(gameFightersArr) {
   var randomIndex = Math.floor(Math.random() * gameFightersArr.length)
-  computer.token = gameFightersArr[randomIndex]
-  return computer.token;
+  computerToken = gameFightersArr[randomIndex]
+
+  return computerToken
 };
 
 function saysShoot() {
- game.winConditions(user.token, computer.token);
- updateUserScore()
- updateComputerScore()
+  game.winConditions(user.token, computer.token);
+  updateUserScore()
+  updateComputerScore()
 };
 
 function gameRef(winner) {
@@ -82,7 +83,7 @@ function gameRef(winner) {
   if(winner === user.token ) {
     gameAnnouncer.innerText = `Winner: ${user.name}`
     winnerDisplay.innerText = `😄 ${user.token} destroyed ${computer.token}!😄`
-  }else if(winner === computer.token) {
+  }else if(winner === computerToken) {
     gameAnnouncer.innerText = `Winner: ${computer.name}`
     winnerDisplay.innerText = `🤬 ${computer.token} disembowled ${user.token}!🤬`
   }else {
@@ -154,5 +155,5 @@ function reset() {
 var classicGameFighters = ['paper','scissors','rock']
 var superGameFighters =['paper','scissors','rock','villain','hero'];
 var user = new Player({name:'user', token:'', wins:0});
-var computer = new Player({name:'computer', token:'',wins:0});
+var computer = new Player({name:'computer', token:'', wins:0});
 var game = new Game(user, computer);
