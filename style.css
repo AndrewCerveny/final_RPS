@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 /* html elements  */
+
 html {
  height: 100vh;
 }
@@ -80,6 +81,7 @@ h4 {
 }
 
 /* Middle-Gameing Area */
+
 .middle-section-wrapper {
   display: flex;
   flex-direction: column;
@@ -134,7 +136,9 @@ h4 {
 .injustice-game-area:hover {
   background-color: #caf0f8;
 }
+
 /* Computer-scoreboard Area */
+
 .right-section-wrapper {
   display: flex;
   flex-direction: column;
