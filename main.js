@@ -18,16 +18,8 @@ var newGame = document.querySelector('#reset')
 
 
 
-
-
-
-
-
-
-
-
-
 // Event Listeners
+
 changeGameButton.addEventListener('click', backHome)
 classicGameArea.addEventListener('click', oldSchool);
 injusticeGameArea.addEventListener('click',royal);
@@ -39,9 +31,8 @@ saysShoot()
 newGame.addEventListener('click',timeOut)
 
 
-
-
 // functions
+
 function oldSchool() {
   hiddenForm.classList.remove('hidden');
   classicGameArea.classList.add('hidden');
@@ -53,8 +44,14 @@ function royal() {
   oldSchool();
   displayCharacters();
   game.checkingGameType('injustice');
-
 }
+
+function computerPlayer(gameFightersArr) {
+  var randomIndex = Math.floor(Math.random() * gameFightersArr.length)
+  computerToken = gameFightersArr[randomIndex]
+
+  return computerToken
+};
 
 function displayCharacters(){
 hiddenHeroButton.classList.remove('hidden')
@@ -63,13 +60,6 @@ hiddenVillainButton.classList.remove('hidden')
 function hideCharacters() {
   hiddenHeroButton.classList.add('hidden')
   hiddenVillainButton.classList.add('hidden')
-};
-
-function computerPlayer(gameFightersArr) {
-  var randomIndex = Math.floor(Math.random() * gameFightersArr.length)
-  computerToken = gameFightersArr[randomIndex]
-
-  return computerToken
 };
 
 function saysShoot() {
@@ -152,6 +142,7 @@ function timeOut() {
 
 
 //  variables
+
 var classicGameFighters = ['paper','scissors','rock']
 var superGameFighters =['paper','scissors','rock','villain','hero'];
 var user = new Player({name:'user', token:'', wins:0});
