@@ -1,5 +1,5 @@
 
-# ROCK-Paper- Scissors
+# Rock-Paper- Scissors
 
 ### Abstract:
 This page is a rock paper scissor game with two modes; Classic and Injustice Royal. The user will pick a player and the computer will generate an opponent. The game will notify who wins and well as increase a win counter per victory. The game also allows for a new game which will set the win counters back to zero and make the players build their scores again. This page doesn't solve any problems accept for providing slight entertainment for someone who just wants an online game experience.
