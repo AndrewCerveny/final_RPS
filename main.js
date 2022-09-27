@@ -67,27 +67,28 @@ function hideCharacters() {
 
 function computerPlayer(gameFightersArr) {
   var randomIndex = Math.floor(Math.random() * gameFightersArr.length)
-  var computerFighter = gameFightersArr[randomIndex]
-  return computerFighter
+  computerToken = gameFightersArr[randomIndex]
+
+  return computerToken
 };
 
 function saysShoot() {
- game.winConditions(user.chosenFighter, computer.chosenFighter);
- updateUserScore()
- updateComputerScore()
+  game.winConditions(user.token, computer.token);
+  updateUserScore()
+  updateComputerScore()
 };
 
 function gameRef(winner) {
   winnerDisplay.classList.remove('hidden')
-  if(winner === user.chosenFighter ) {
+  if(winner === user.token ) {
     gameAnnouncer.innerText = `Winner: ${user.name}`
-    winnerDisplay.innerText = `😄 ${user.chosenFighter} destroyed ${computer.chosenFighter}!😄`
-  }else if(winner === computer.chosenFighter) {
+    winnerDisplay.innerText = `😄 ${user.token} destroyed ${computer.token}!😄`
+  }else if(winner === computerToken) {
     gameAnnouncer.innerText = `Winner: ${computer.name}`
-    winnerDisplay.innerText = `🤬 ${computer.chosenFighter} disembowled ${user.chosenFighter}!🤬`
+    winnerDisplay.innerText = `🤬 ${computer.token} disembowled ${user.token}!🤬`
   }else {
     gameAnnouncer.innerText = `Winner: NONE `
-    winnerDisplay.innerText = `🩻 ${user.chosenFighter} and ${computer.chosenFighter} had equal damage! 🩻 `
+    winnerDisplay.innerText = `🩻 ${user.token} and ${computer.token} had equal damage! 🩻 `
   }
 }
 
@@ -100,15 +101,15 @@ computerWinsCounter.textContent = `${game.player2Wins}`;
 }
 
 function matchUsersChoice() {
-  if(user.chosenFighter === 'rock') {
+  if(user.token === 'rock') {
     userFighterDisplay.innerText = '🗿'
-  }else if (user.chosenFighter === 'paper') {
+  }else if (user.token === 'paper') {
     userFighterDisplay.innerText = '📄'
-  }else if(user.chosenFighter === 'scissors') {
+  }else if(user.token === 'scissors') {
     userFighterDisplay.innerText = '✂️'
-  }else if (user.chosenFighter === 'hero') {
+  }else if (user.token === 'hero') {
     userFighterDisplay.innerText = '🦸🏽‍♂️'
-  }else if (user.chosenFighter === 'villain') {
+  }else if (user.token === 'villain') {
       userFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{
     userFighterDisplay.innerText = '🛑'
@@ -117,15 +118,15 @@ function matchUsersChoice() {
 }
 
 function matchComputerChoice() {
-  if(computer.chosenFighter === 'rock') {
+  if(computer.token === 'rock') {
     computerFighterDisplay.innerText = '🗿'
-  }else if (computer.chosenFighter === 'paper') {
+  }else if (computer.token === 'paper') {
     computerFighterDisplay.innerText = '📄'
-  }else if(computer.chosenFighter === 'scissors') {
+  }else if(computer.token === 'scissors') {
     computerFighterDisplay.innerText = '✂️'
-  }else if (computer.chosenFighter === 'hero') {
+  }else if (computer.token === 'hero') {
     computerFighterDisplay.innerText = '🦸🏽‍♂️'
-  }else if (computer.chosenFighter === 'villain') {
+  }else if (computer.token === 'villain') {
     computerFighterDisplay.innerText = '🦹🏼‍♂️'
   }else{
     computerFighterDisplay.innerText = '🛑'
@@ -153,6 +154,6 @@ function reset() {
 //  variables
 var classicGameFighters = ['paper','scissors','rock']
 var superGameFighters =['paper','scissors','rock','villain','hero'];
-var user = new Player({name:'user', token:'👨🏽‍💻', wins:0});
-var computer = new Player({name:'computer', token:'💻',wins:0});
+var user = new Player({name:'user', token:'', wins:0});
+var computer = new Player({name:'computer', token:'', wins:0});
 var game = new Game(user, computer);
