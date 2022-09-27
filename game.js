@@ -25,25 +25,24 @@ class Game {
   }
   implementsClassicGame(userToken, computerToken) {
     if(userToken === computerToken) {
-      gameRef('draw')
+      return gameRef('draw')
     }else if(userToken === 'rock' && computerToken === 'scissors') {
-      this.gameVictor = userToken
-      console.log('JEANS',this.gameVictor)
+      this.gameVictor = userToken;
       this.player1Wins += 1;
     } else if(userToken === 'rock' && computerToken === 'paper') {
-      this.gameVictor = computerToken
+      this.gameVictor = computerToken;
       this.player2Wins += 1;
     } else if(userToken === 'paper' && computerToken === 'scissors') {
-      this.gameVictor = computerToken
+      this.gameVictor = computerToken;
       this.player2Wins += 1;
     } else if(userToken === 'paper' && computerToken === 'rock') {
-      this.gameVictor = userToken
+      this.gameVictor = userToken;
       this.player1Wins += 1;
     }else if(userToken === 'scissors' && computerToken === 'rock') {
-      this.gameVictor = computerToken
+      this.gameVictor = computerToken;
       this.player2Wins += 1;
     } else if(userToken === 'scissors' && computerToken === 'paper') {
-      this.gameVictor = userToken
+      this.gameVictor = userToken;
       this.player1Wins += 1;
     }else{
         return `unknown fighter or fighters`
@@ -52,7 +51,7 @@ class Game {
   }
   implementsInjusticeGame(userToken, computerToken) {
     if(userToken === computerToken) {
-      gameRef('draw')
+      return gameRef('draw')
     }else if(userToken === 'rock' && computerToken === 'scissors') {
       this.gameVictor = userToken;
       this.player1Wins += 1;
@@ -119,13 +118,3 @@ class Game {
       gameRef(this.gameVictor)
   }
 }
-
-
-
-
-
-
-
-
-// 3 possible
-//1 draw: its a draw (chage innter html), 2 user wins( user chosen fighter wins: change HTML) 3 compute wins : ( change html)
