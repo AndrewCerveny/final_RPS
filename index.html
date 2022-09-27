@@ -11,10 +11,10 @@
       <!-- Left side bar area -->
       <section class='left-section-wrapper'>
         <div class='user-scoreboard'>
-        <p class = 'user-icon'>👨🏽‍💻</p>
+        <p class = 'user-icon' alt="person using computer">👨🏽‍💻</p>
         <div class= 'user-trackpad'>
         <h3> User </h3>
-        <p class='u-fighter-display' id='UserFighterExhibit'> Fighter </p>
+        <p class='u-fighter-display' id='UserFighterExhibit' alt='character user chose'> Fighter </p>
         <div class="wrapper-user-wins">
         <h4> Wins </h4>
           <p id='userWins'>_</p>
@@ -39,13 +39,13 @@
                 <button class="reset-button"id="reset" type="reset" name="fresh-game" => New Game </button>
               </div>
             <div class="wrapper-btns" id="charactersContainer">
-              <button class="f-button" id="rockBtn"type="submit" value="rock"alt="rock">🗿</button>
-              <button class="f-button" id="paperBtn"type="submit" value="paper">📄</button>
-              <button class="f-button" id="scissorsBtn" type="submit" value="scissors">✂️</button>
-              <button class="f-button hidden" type="submit" value="hero" id="hiddenHero">🦸🏽‍♂️</button>
-              <button class="f-button hidden" type="submit" value="villain" id="hiddenVillain">🦹🏼‍♂️</button>
+              <button class="f-button" id="rockBtn"type="submit" value="rock" alt="rock">🗿</button>
+              <button class="f-button" id="paperBtn"type="submit" value="paper" alt="paper">📄</button>
+              <button class="f-button" id="scissorsBtn" type="submit" value="scissors" alt="scissors">✂️</button>
+              <button class="f-button hidden" type="submit" value="hero" id="hiddenHero" alt='hero'>🦸🏽‍♂️</button>
+              <button class="f-button hidden" type="submit" value="villain" id="hiddenVillain" alt='villain'>🦹🏼‍♂️</button>
             </div>
-            <p class= "hidden winner-display"id="champDisplay"> winner</p>
+            <p class= "hidden winner-display"id="champDisplay" alt="announcement area of character beating another character"> winner</p>
           </div>
 
           </section>
@@ -53,7 +53,7 @@
       <!-- Game board display areas -->
 
       <section class="classic-game-area" id="classicGame">
-        <h2>🗿 Classic 📄 </h2>
+        <h2 alt="rock statue and paper statue on either side of label">🗿 Classic 📄 </h2>
           <label for="classic-rules"> Rules </label>
             <li> rock > scissors </li>
             <li> paper > rock </li>
@@ -62,7 +62,7 @@
 
           <!-- injustice Game main area  -->
       <section class="injustice-game-area" id="superGame">
-        <h2>🦸🏽‍♂️ Injustice Royal 🦹🏼‍♂️</h2>
+        <h2 alt="hero emoji and villian emoji around title">🦸🏽‍♂️ Injustice Royal 🦹🏼‍♂️</h2>
           <label for="injustice-rules"> Rules </label>
             <li> rock > scissors & villain </li>
             <li> paper > rock &  hero </li>
@@ -74,10 +74,10 @@
     <!-- Right side bar area -->
       <section class='right-section-wrapper'>
         <div class='computer-scoreboard'>
-        <p class='computer-icon'>💻</p>
+        <p class='computer-icon' alt="computer displayed as opponent">💻</p>
         <div class='computer-trackpad'>
         <h3> Computer </h3>
-        <p class='c-fighter-display'id='CompFighterExhibit'> Fighter </p>
+        <p class='c-fighter-display'id='CompFighterExhibit' alt="character commuter chose"> Fighter </p>
         <div class="wrapper-comp-wins">
         <h4> Wins </h4>
         <p id=computerWins>_</p>
